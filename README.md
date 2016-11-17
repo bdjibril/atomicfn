@@ -5,6 +5,10 @@
 atomic<b>Fn</b>
 <br/><br/>
 
+<a href="https://travis-ci.org/bdjibril/atomicfn">
+  <img src="https://travis-ci.org/bdjibril/atomicfn.svg?branch=master" alt="Travis-ci Build"/>
+</a>
+
 <a href="https://github.com/bdjibril/micro-worker/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT licensed"/>
 </a>
