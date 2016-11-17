@@ -20,7 +20,7 @@
   },
   "author": "Bah Djibril <dbdjbah@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "jasmine-node": "^1.14.5"
   }
 }
