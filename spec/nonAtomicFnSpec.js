@@ -17,9 +17,20 @@ for (var i = 1; i <= limit; i++) {
 }
 
 // Test what happens when we do not use an atomic version of the function
-// We notice that val is set to the unexpected value 1
-describe("Non Atomic Function", function() {
-    it("Runs the Functions the default Async Way. Winer is Random", function() {
-        setTimeout(() => expect(limit).not.toBe(val), limit * limit * limit);
+// We notice that val is set to an unexpected value (0,1 or 2 in most cases)
+describe("Non Atomic Function", function(){
+	beforeEach(function(done){
+		for (var i = 0; i <= limit; i++) {
+			setVal(limit - i, i, (err, res) => console.log(`${res} current value ${val}`))
+		}
+		setTimeout(function(){
+			done()
+		}, limit * limit * limit)
+	});
+
+    it("Runs the Functions the default Async Way. Winer is Random", function(done) {
+        expect(limit).not.toBe(val);
+        done()
     });
+
 });

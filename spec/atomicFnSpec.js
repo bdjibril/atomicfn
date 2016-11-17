@@ -15,17 +15,20 @@ const setVal = (timeout, v, cb) => {
 
 const setValAtomic = atomic(setVal, 'general');
 
-/*for (var i = 0; i < limit; i++) {
-	setVal(limit - i, i, (err, res) => console.log(`${res} current value ${val}`))
-}*/
+describe("Atomic Function", function(){
+	beforeEach(function(done){
+		for (var i = 0; i <= limit; i++) {
+			setValAtomic(limit - i, i, (err, res) => console.log(`${res} current value ${val}`))
+		}
+		setTimeout(function(){
+			done()
+		}, limit * limit * limit)
+	});
 
-for (var i = 1; i <= limit; i++) {
-	setValAtomic(limit - i, i, (err, res) => console.log(`${res} current value ${val}`))
-}
-
-// make sure we get get the intended result (limit)
-describe("Atomic Function", function() {
-    it("Sould Execute Sequentially and last function Wins", function() {
-        setTimeout(() => expect(limit).toBe(val), limit * limit * limit);
+	// make sure we get get the intended result (limit)
+    it("Sould Execute Sequentially and last function Wins", function(done) {
+        expect(limit).toBe(val);
+        done()
     });
+
 });
