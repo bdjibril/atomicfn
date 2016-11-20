@@ -1,6 +1,6 @@
 {
   "name": "atomicfn",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This is a utility that will takes a regular function and returns an atomic version of it given a lock name",
   "main": "index.js",
   "scripts": {

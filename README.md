@@ -74,3 +74,4 @@ npm test
 * 0.0.1 Initial release
 * 0.0.2 Fixed a bug related to fat arrow usage
 * 0.0.3 Added support for node < 6 (es5)
+* 0.0.4 Added support for Concurency now we can specfy a concurency value as parameter
