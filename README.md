@@ -35,6 +35,7 @@ This repository contains a library that transforms your function calls into an `
  
  > The example below is a taking a setting the global var `val` atomically regardless of the async nature of it. The non atomic version will probably set the val to `0` at the end. The atomic version below sets the intended value `10` at the end.
 
+[See it in Action](https://runkit.com/bdjibril/atomicfn-demo)
 ```javascript
 // Require the atomic library
 const atomic = require('atomicfn').atomic;
