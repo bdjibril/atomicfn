@@ -4,7 +4,7 @@
   "description": "This is a utility that will takes a regular function and returns an atomic version of it given a lock name",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node spec"
+    "test": "jasmine-node spec"
   },
   "keywords": [
     "atomic",
