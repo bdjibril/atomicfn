@@ -2,4 +2,5 @@ pipeline:
   build:
     image: node:8.0.0-alpine
     commands:
+      - npm install
       - npm test
