@@ -18,7 +18,7 @@ const setValAtomic = atomic(setVal, 'general');
 describe("Atomic Function", function(){
 	beforeEach(function(done){
 		for (var i = 0; i <= limit; i++) {
-			setValAtomic(limit - i, i, (err, res) => console.log(`${res} current value ${val}`))
+			setValAtomic(limit - i, i, () => {} )
 		}
 		setTimeout(function(){
 			done()

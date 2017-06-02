@@ -12,16 +12,12 @@ const setVal = (timeout, v, cb) => {
 	}, timeout);
 }
 
-for (var i = 1; i <= limit; i++) {
-	setVal(limit - i, i, (err, res) => console.log(`${res} current value ${val}`))
-}
-
 // Test what happens when we do not use an atomic version of the function
 // We notice that val is set to an unexpected value (0,1 or 2 in most cases)
 describe("Non Atomic Function", function(){
 	beforeEach(function(done){
 		for (var i = 0; i <= limit; i++) {
-			setVal(limit - i, i, (err, res) => console.log(`${res} current value ${val}`))
+			setVal(limit - i, i, () => {} )
 		}
 		setTimeout(function(){
 			done()

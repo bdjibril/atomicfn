@@ -13,21 +13,21 @@ const setVal = (timeout, v, cb) => {
 	}, timeout);
 }
 
-const setValAtomic = atomic(setVal, 'general', 3);
+const setValAtomic = atomic(setVal, 'general', 2);
 
 describe("Atomic Function", function(){
 	beforeEach(function(done){
 		for (var i = 0; i <= limit; i++) {
-			setValAtomic(limit - i, i, (err, res) => console.log(`${res} current value ${val}`))
+			setValAtomic((limit - i) * 50, i, () => {} )
 		}
 		setTimeout(function(){
 			done()
-		}, limit * limit * limit)
+		}, 5 * limit * limit * limit)
 	});
 
 	// make sure we get get the intended result (limit)
     it("Sould Execute Sequentially and last function Wins", function(done) {
-        expect(limit).toBe(val);
+        expect(limit).not.toBe(val);
         done()
     });
 
