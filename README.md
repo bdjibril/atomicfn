@@ -55,10 +55,11 @@ const setVal = (timeout, v, cb) => {
 /* 
  * This is how you make your function atomic
  * Parameters:
- * yourFunction:(required)
- * theLockName(required), 
- * theTimeout(optional default=60000)
- * theCheckInterval(optional default=50) 
+ * 	yourFunction:(required)
+ * 	theLockName(required)
+ * 	theNumberOfConsurrentInstances(optional default=1)
+ * 	theTimeout(optional default=60000)
+ * 	theCheckInterval(optional default=50) 
  */
 const setValAtomic = atomic(setVal, 'general');
 
